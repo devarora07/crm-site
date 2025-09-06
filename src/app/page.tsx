@@ -9,6 +9,7 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import StepsSection from '@/components/StepsSection'
 import Banner from '@/components/Banner'
+import PricingSection from '@/components/PricingSection'
 
 export default function Page() {
   return (
@@ -23,6 +24,7 @@ export default function Page() {
       <FeaturesSection />
       <StepsSection />
       <IntegrationsSection />
+      <PricingSection />
       <CTASection />
       <Footer />
     </div>
