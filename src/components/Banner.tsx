@@ -25,13 +25,10 @@ const Banner: React.FC = () => {
         </h1>
       </div>
 
-      {/* Scroll Down Arrow - Made more prominent */}
+      {/* Simple Scroll Down Arrow */}
       <div className="scroll-down-container">
         <div className="scroll-arrow" onClick={scrollToNext}>
-          <div className="arrow-icon">
-            <span>↓</span>
-          </div>
-          <div className="scroll-text">Scroll Down</div>
+          <span>↓</span>
         </div>
       </div>
 
@@ -129,7 +126,7 @@ const Banner: React.FC = () => {
           animation: shine 3s ease-in-out infinite;
         }
 
-        /* Scroll Down Container - Fixed positioning */
+        /* Scroll Down Container */
         .scroll-down-container {
           display: flex;
           justify-content: center;
@@ -139,11 +136,8 @@ const Banner: React.FC = () => {
           z-index: 100;
         }
 
-        /* Scroll Arrow Styles - More visible */
+        /* Simple Scroll Arrow - No circle border, no text */
         .scroll-arrow {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
           cursor: pointer;
           transition: all 0.3s ease;
           padding: 1rem;
@@ -153,51 +147,18 @@ const Banner: React.FC = () => {
           transform: translateY(-5px);
         }
 
-        .arrow-icon {
-          width: 60px;
-          height: 60px;
-          border: 3px solid #3498db;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 0.8rem;
-          transition: all 0.3s ease;
-          animation: pulse 2s ease-in-out infinite;
-          background: rgba(52, 152, 219, 0.1);
-        }
-
-        .arrow-icon span {
-          font-size: 2rem;
+        .scroll-arrow span {
+          font-size: 3rem;
           color: #3498db;
           font-weight: bold;
           animation: bounce-arrow 1.5s ease-in-out infinite;
-        }
-
-        .scroll-text {
-          font-size: 1rem;
-          color: #7f8c8d;
-          font-weight: 600;
-          opacity: 0.9;
           transition: all 0.3s ease;
-          text-transform: uppercase;
-          letter-spacing: 1px;
+          display: inline-block;
         }
 
-        .scroll-arrow:hover .arrow-icon {
-          background: #3498db;
-          transform: scale(1.1);
-          border-color: #2980b9;
-        }
-
-        .scroll-arrow:hover .arrow-icon span {
-          color: white;
-        }
-
-        .scroll-arrow:hover .scroll-text {
-          opacity: 1;
-          color: #3498db;
-          transform: translateY(-2px);
+        .scroll-arrow:hover span {
+          color: #2980b9;
+          transform: scale(1.2);
         }
 
         @keyframes glow {
@@ -239,21 +200,12 @@ const Banner: React.FC = () => {
           }
         }
 
-        @keyframes pulse {
-          0%, 100% {
-            box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
-          }
-          50% {
-            box-shadow: 0 0 0 15px rgba(52, 152, 219, 0);
-          }
-        }
-
         @keyframes bounce-arrow {
           0%, 100% {
             transform: translateY(0);
           }
           50% {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
           }
         }
 
@@ -280,18 +232,8 @@ const Banner: React.FC = () => {
             margin-top: 2rem;
           }
 
-          .arrow-icon {
-            width: 50px;
-            height: 50px;
-            border-width: 2px;
-          }
-
-          .arrow-icon span {
-            font-size: 1.5rem;
-          }
-
-          .scroll-text {
-            font-size: 0.9rem;
+          .scroll-arrow span {
+            font-size: 2.5rem;
           }
         }
       `}</style>
