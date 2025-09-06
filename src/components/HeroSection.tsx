@@ -143,7 +143,7 @@ export default function HeroSection() {
               </div>
               <h4 className="font-semibold text-slate-900 mb-3 text-lg">Welcome to Your AI Assistant</h4>
               <p className="text-slate-500 text-base max-w-sm mx-auto">
-                Hi! I'm here to help with your CRM questions and guide you through the dashboard features. Ask me anything!
+                {`Hi! I'm here to help with your CRM questions and guide you through the dashboard features. Ask me anything!`}
               </p>
             </div>
           )}
