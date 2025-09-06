@@ -1,6 +1,13 @@
 import React from "react";
 
 const Banner: React.FC = () => {
+  const scrollToNext = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="tagline-body">
       <div className="tagline-container">
@@ -18,6 +25,16 @@ const Banner: React.FC = () => {
         </h1>
       </div>
 
+      {/* Scroll Down Arrow - Made more prominent */}
+      <div className="scroll-down-container">
+        <div className="scroll-arrow" onClick={scrollToNext}>
+          <div className="arrow-icon">
+            <span>↓</span>
+          </div>
+          <div className="scroll-text">Scroll Down</div>
+        </div>
+      </div>
+
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
@@ -26,14 +43,20 @@ const Banner: React.FC = () => {
           background: white;
           min-height: 100vh;
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justify-content: space-between;
           padding: 2rem;
+          position: relative;
         }
 
         .tagline-container {
           text-align: center;
           position: relative;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .tagline {
@@ -106,6 +129,77 @@ const Banner: React.FC = () => {
           animation: shine 3s ease-in-out infinite;
         }
 
+        /* Scroll Down Container - Fixed positioning */
+        .scroll-down-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin-top: 4rem;
+          z-index: 100;
+        }
+
+        /* Scroll Arrow Styles - More visible */
+        .scroll-arrow {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          padding: 1rem;
+        }
+
+        .scroll-arrow:hover {
+          transform: translateY(-5px);
+        }
+
+        .arrow-icon {
+          width: 60px;
+          height: 60px;
+          border: 3px solid #3498db;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 0.8rem;
+          transition: all 0.3s ease;
+          animation: pulse 2s ease-in-out infinite;
+          background: rgba(52, 152, 219, 0.1);
+        }
+
+        .arrow-icon span {
+          font-size: 2rem;
+          color: #3498db;
+          font-weight: bold;
+          animation: bounce-arrow 1.5s ease-in-out infinite;
+        }
+
+        .scroll-text {
+          font-size: 1rem;
+          color: #7f8c8d;
+          font-weight: 600;
+          opacity: 0.9;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .scroll-arrow:hover .arrow-icon {
+          background: #3498db;
+          transform: scale(1.1);
+          border-color: #2980b9;
+        }
+
+        .scroll-arrow:hover .arrow-icon span {
+          color: white;
+        }
+
+        .scroll-arrow:hover .scroll-text {
+          opacity: 1;
+          color: #3498db;
+          transform: translateY(-2px);
+        }
+
         @keyframes glow {
           0% {
             text-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
@@ -145,8 +239,30 @@ const Banner: React.FC = () => {
           }
         }
 
+        @keyframes pulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+          }
+          50% {
+            box-shadow: 0 0 0 15px rgba(52, 152, 219, 0);
+          }
+        }
+
+        @keyframes bounce-arrow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+          .tagline-body {
+            padding: 1rem;
+          }
+
           .tagline {
             font-size: clamp(2rem, 10vw, 4rem);
           }
@@ -159,6 +275,24 @@ const Banner: React.FC = () => {
           .caret {
             font-size: 0.9em;
           }
+
+          .scroll-down-container {
+            margin-top: 2rem;
+          }
+
+          .arrow-icon {
+            width: 50px;
+            height: 50px;
+            border-width: 2px;
+          }
+
+          .arrow-icon span {
+            font-size: 1.5rem;
+          }
+
+          .scroll-text {
+            font-size: 0.9rem;
+          }
         }
       `}</style>
     </div>
@@ -166,3 +300,4 @@ const Banner: React.FC = () => {
 };
 
 export default Banner;
+export {};
