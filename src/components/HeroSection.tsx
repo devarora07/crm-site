@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ChatSection from './ChatSections'
 
 interface Message {
   role: 'user' | 'assistant';
@@ -8,63 +9,6 @@ interface Message {
 }
 
 export default function HeroSection() {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-
-  const sendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-
-    const userMessage: Message = { role: 'user', content: input };
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setIsLoading(true);
-
-    try {
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer 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`,
-          'Content-Type': 'application/json',
-          'X-Title': 'CRM Chatbot',
-        },
-        body: JSON.stringify({
-          model: 'meta-llama/llama-3.1-8b-instruct:free',
-          messages: [
-            {
-              role: 'system',
-              content: 'You are a helpful assistant for a CRM dashboard. Keep responses concise and helpful.'
-            },
-            ...messages,
-            userMessage
-          ],
-          max_tokens: 150,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to get response');
-      }
-
-      const data = await response.json();
-      const assistantMessage: Message = {
-        role: 'assistant',
-        content: data.choices[0]?.message?.content || 'Sorry, I could not process your request.'
-      };
-      
-      setMessages(prev => [...prev, assistantMessage]);
-    } catch (error) {
-      console.error('Error:', error);
-      setMessages(prev => [...prev, {
-        role: 'assistant',
-        content: 'Sorry, there was an error processing your request.'
-      }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
     <section className="max-w-4xl mx-auto p-6 space-y-12">
       {/* Hero Content Section */}

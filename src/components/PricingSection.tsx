@@ -39,17 +39,17 @@ export default function PricingSection() {
         Compare Pricing & Features
       </h2>
 
-      <div className="overflow-x-auto">
-        <table className="w-full border border-gray-200 rounded-2xl overflow-hidden shadow-md">
+      <div className="overflow-x-auto border border-gray-300 rounded-2xl">
+        <table className="w-full border border-gray-300 rounded-2xl overflow-hidden shadow-md border-collapse">
           <thead>
             <tr className="bg-gray-50 text-left">
-              <th className="p-4 text-lg font-semibold border-b border-gray-200">
+              <th className="p-4 text-lg font-semibold border border-gray-300">
                 Features
               </th>
               {plans.map((plan, idx) => (
                 <th
                   key={idx}
-                  className={`p-4 text-lg font-semibold text-center border-b border-gray-200 ${
+                  className={`p-4 text-lg font-semibold text-center border border-gray-300 ${
                     plan.highlight
                       ? "bg-purple-50 text-purple-700"
                       : "text-gray-700"
@@ -65,15 +65,14 @@ export default function PricingSection() {
           </thead>
           <tbody>
             {features.map((feature, rowIdx) => (
-              <tr
-                key={rowIdx}
-                className="hover:bg-gray-50 transition-colors border-t border-gray-200"
-              >
-                <td className="p-4 font-medium text-gray-700">{feature}</td>
+              <tr key={rowIdx} className="hover:bg-gray-50 transition-colors">
+                <td className="p-4 font-medium text-gray-700 border border-gray-300">
+                  {feature}
+                </td>
                 {plans.map((plan, colIdx) => (
                   <td
                     key={colIdx}
-                    className={`p-4 text-center ${
+                    className={`p-4 text-center border border-gray-300 ${
                       plan.highlight ? "bg-purple-50" : ""
                     }`}
                   >
@@ -101,9 +100,8 @@ export default function PricingSection() {
       </div>
 
       <p className="text-center text-lg mt-8 font-semibold">
-        {/* All the features you need — at{" "} */}
-        Everything you need in a CRM - for just 1/3rd the cost.
-        <span className="">1/3rd the price</span>.
+        Everything you need in a CRM — for just{" "}
+        <span className="text-purple-600">1/3rd the price</span>.
       </p>
     </section>
   );

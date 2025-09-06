@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import StepsSection from '@/components/StepsSection'
 import Banner from '@/components/Banner'
 import PricingSection from '@/components/PricingSection'
+import ChatSection from '@/components/ChatSections'
 
 export default function Page() {
   return (
@@ -22,9 +23,9 @@ export default function Page() {
         <GraphSection />
       </main>
       <FeaturesSection />
-      <StepsSection />
-      <IntegrationsSection />
+      <ChatSection />
       <PricingSection />
+      <IntegrationsSection />
       <CTASection />
       <Footer />
     </div>

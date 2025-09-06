@@ -7,7 +7,7 @@ interface Message {
   content: string;
 }
 
-export default function HeroSection() {
+export default function ChatSection() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -66,8 +66,7 @@ export default function HeroSection() {
   };
  
   return (
- {/* Chat Interface Section */}
-      <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden max-w-2xl mx-auto">
+      <div className="bg-white my-10 rounded-2xl shadow-xl border border-slate-200 overflow-hidden max-w-2xl mx-auto">
         {/* Chat Header */}
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6">
           <div className="flex items-center gap-3">
@@ -97,7 +96,7 @@ export default function HeroSection() {
               </div>
               <h4 className="font-semibold text-slate-900 mb-3 text-lg">Welcome to Your AI Assistant</h4>
               <p className="text-slate-500 text-base max-w-sm mx-auto">
-                Hi! I'm here to help with your CRM questions and guide you through the dashboard features. Ask me anything!
+                {`Hi! I'm here to help with your CRM questions and guide you through the dashboard features. Ask me anything!`}
               </p>
             </div>
           )}
