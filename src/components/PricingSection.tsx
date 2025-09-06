@@ -40,33 +40,57 @@ export default function PricingSection() {
       </h2>
 
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse rounded-2xl overflow-hidden shadow-lg">
+        <table className="w-full border border-gray-200 rounded-2xl overflow-hidden shadow-md">
           <thead>
-            <tr className="bg-gray-100 text-left">
-              <th className="p-4 text-lg font-semibold">Features</th>
+            <tr className="bg-gray-50 text-left">
+              <th className="p-4 text-lg font-semibold border-b border-gray-200">
+                Features
+              </th>
               {plans.map((plan, idx) => (
                 <th
                   key={idx}
-                  className={`p-4 text-lg font-semibold text-center ${
-                    plan.highlight ? "bg-indigo-50 text-indigo-600" : ""
+                  className={`p-4 text-lg font-semibold text-center border-b border-gray-200 ${
+                    plan.highlight
+                      ? "bg-purple-50 text-purple-700"
+                      : "text-gray-700"
                   }`}
                 >
                   {plan.name}
-                  <div className="text-sm font-normal">{plan.price}</div>
+                  <div className="text-sm font-normal text-gray-500">
+                    {plan.price}
+                  </div>
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
             {features.map((feature, rowIdx) => (
-              <tr key={rowIdx} className="border-t">
-                <td className="p-4 font-medium">{feature}</td>
+              <tr
+                key={rowIdx}
+                className="hover:bg-gray-50 transition-colors border-t border-gray-200"
+              >
+                <td className="p-4 font-medium text-gray-700">{feature}</td>
                 {plans.map((plan, colIdx) => (
-                  <td key={colIdx} className="p-4 text-center">
+                  <td
+                    key={colIdx}
+                    className={`p-4 text-center ${
+                      plan.highlight ? "bg-purple-50" : ""
+                    }`}
+                  >
                     {plan.features[rowIdx] ? (
-                      <Check className="text-green-500 inline-block" />
+                      <Check
+                        className={`inline-block ${
+                          plan.highlight
+                            ? "text-purple-600"
+                            : "text-green-500"
+                        }`}
+                      />
                     ) : (
-                      <X className="text-red-500 inline-block" />
+                      <X
+                        className={`inline-block ${
+                          plan.highlight ? "text-purple-400" : "text-red-500"
+                        }`}
+                      />
                     )}
                   </td>
                 ))}
@@ -76,8 +100,10 @@ export default function PricingSection() {
         </table>
       </div>
 
-      <p className="text-center text-lg mt-8 font-semibold text-indigo-600">
-        All the features you need — at <span className="underline">1/3rd the price</span>.
+      <p className="text-center text-lg mt-8 font-semibold">
+        {/* All the features you need — at{" "} */}
+        Everything you need in a CRM - for just 1/3rd the cost.
+        <span className="">1/3rd the price</span>.
       </p>
     </section>
   );
