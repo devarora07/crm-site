@@ -1,38 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Banner: React.FC = () => {
+  const [showArrow, setShowArrow] = useState(true);
   const scrollToNext = () => {
     window.scrollTo({
       top: window.innerHeight,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowArrow(window.scrollY <= 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="tagline-body">
       <div className="tagline-container">
         <h1 className="tagline">
           <div className="main-text">
+            <span className="word-the">The</span>
+            
             <span className="t-wrapper">
-              <span className="word-not">Not</span>
+              <span className="word-not">not so</span>
               <span className="caret">^</span>
               <span className="word-s">-</span>
             </span>
-            <span className="word-the">The</span>
             <span className="word-boring"> boring</span>
             <span className="word-crm"> CRM</span>
           </div>
         </h1>
       </div>
 
+
+  {showArrow && (
+        <div className="scroll-down-container">
+          <div className="scroll-arrow" onClick={scrollToNext}>
+            <span>↓</span>
+          </div>
+        </div>
+      )}
+
       {/* Simple Scroll Down Arrow */}
-      <div className="scroll-down-container">
+      {/* <div className="scroll-down-container">
         <div className="scroll-arrow" onClick={scrollToNext}>
           <span>↓</span>
         </div>
-      </div>
+      </div> */}
 
-      <style jsx>{`
+            <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
         .tagline-body {
