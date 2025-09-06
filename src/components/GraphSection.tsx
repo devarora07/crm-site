@@ -3,13 +3,13 @@ import React from 'react';
 import { ResponsiveContainer, AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
 const sampleData = [
-  { week: 'W1', leads: 120 },
-  { week: 'W2', leads: 180 },
-  { week: 'W3', leads: 240 },
-  { week: 'W4', leads: 300 },
-  { week: 'W5', leads: 360 },
-  { week: 'W6', leads: 420 },
-  { week: 'W7', leads: 480 },
+  { week: 'W1', tickets: 120 },
+  { week: 'W2', tickets: 180 },
+  { week: 'W3', tickets: 240 },
+  { week: 'W4', tickets: 300 },
+  { week: 'W5', tickets: 360 },
+  { week: 'W6', tickets: 420 },
+  { week: 'W7', tickets: 480 },
 ];
 
 function formatShortNumber(num: number) {
@@ -39,7 +39,7 @@ return (
         <div className="flex items-start justify-between">
             <div>
                 <div className="text-sm text-slate-500">Routing Curves</div>
-                <div className="mt-1 font-semibold text-lg">Tokens / week</div>
+                <div className="mt-1 font-semibold text-lg">Tickets / week</div>
             </div>
             <div className="text-xs text-slate-400">+8.82% weekly</div>
         </div>
@@ -57,7 +57,7 @@ return (
                     <XAxis dataKey="week" axisLine={false} tickLine={false} />
                     <YAxis axisLine={false} tickLine={false} tickFormatter={(val)=> formatShortNumber(val)} />
                         <Tooltip formatter={(val:number)=> formatNumber(val)} />
-                            <Area type="monotone" dataKey="leads" stroke="#7c3aed" fillOpacity={1} fill="url(#grad)" />
+                            <Area type="monotone" dataKey="tickets" stroke="#7c3aed" fillOpacity={1} fill="url(#grad)" />
 
                             {/* <Area type="monotone" dataKey="tokens" stroke="#7c3aed" fillOpacity={1} fill="url(#grad)" /> */}
                 </AreaChart>
@@ -65,7 +65,7 @@ return (
         </div>
 
         <div className="mt-4 flex gap-3">
-            <MiniStat label="Top model" value="Gemini 2.5 Pro" />
+            <MiniStat label="Top Uses" value="Field Report Submission" />
             <MiniStat label="Latency" value="2.4s" />
             <MiniStat label="Weekly growth" value="+8.82%" />
         </div>
@@ -73,11 +73,11 @@ return (
 
     <div className="mt-6 flex gap-4">
         <div className="flex-1 bg-white border rounded-lg p-4 text-sm">
-            <div className="text-slate-500">Featured model</div>
-            <div className="mt-1 font-medium">GPT-5 — 69.1B tokens/week</div>
+            <div className="text-slate-500">Weekly Performance</div>
+            <div className="mt-1 font-medium">100+ tickets/week closed</div>
         </div>
         <div className="w-44 bg-white border rounded-lg p-4 text-sm">
-            <div className="text-slate-500">Providers</div>
+            <div className="text-slate-500">On Site Users</div>
             <div className="mt-1 font-medium">60+</div>
         </div>
     </div>

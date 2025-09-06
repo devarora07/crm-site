@@ -81,7 +81,7 @@ const Banner: React.FC = () => {
           top: -1.2em;
           left: 0;
           transform: translateX(-25%);
-          color: #3498db;
+          color:rgb(0, 0, 0);
           font-size: 0.6em;
           animation: glow 2s ease-in-out infinite alternate;
           z-index: 10;
@@ -93,7 +93,7 @@ const Banner: React.FC = () => {
           bottom: -0.65em;
           left: 0.1em;
           transform: translateX(-50%);
-          color: #3498db;
+          color: #4B0082;
           font-size: 0.8em;
           font-weight: 900;
           animation: bounce 1.5s ease-in-out infinite;
@@ -110,14 +110,14 @@ const Banner: React.FC = () => {
         .word-boring {
           position: relative;
           text-decoration: line-through;
-          text-decoration-color: #3498db;
+          text-decoration-color: #4B0082;
           text-decoration-thickness: 4px;
           color: #95a5a6;
           animation: strikethrough 3s ease-in-out infinite 0.5s;
         }
 
         .word-crm {
-          background: linear-gradient(45deg, #2980b9 0%, #3498db 100%);
+          background: linear-gradient(45deg, #4B0082 0%, #6f00ff 50%, #8A2BE2 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -136,7 +136,7 @@ const Banner: React.FC = () => {
           z-index: 100;
         }
 
-        /* Simple Scroll Arrow - No circle border, no text */
+        /* Simple Scroll Arrow - Indigo and Purple theme */
         .scroll-arrow {
           cursor: pointer;
           transition: all 0.3s ease;
@@ -149,7 +149,7 @@ const Banner: React.FC = () => {
 
         .scroll-arrow span {
           font-size: 3rem;
-          color: #3498db;
+          color: #4B0082;
           font-weight: bold;
           animation: bounce-arrow 1.5s ease-in-out infinite;
           transition: all 0.3s ease;
@@ -157,16 +157,16 @@ const Banner: React.FC = () => {
         }
 
         .scroll-arrow:hover span {
-          color: #2980b9;
+          color: #8A2BE2;
           transform: scale(1.2);
         }
 
         @keyframes glow {
           0% {
-            text-shadow: 0 0 10px #3498db, 0 0 20px #3498db;
+            text-shadow: 0 0 10px #4B0082, 0 0 20px #4B0082;
           }
           100% {
-            text-shadow: 0 0 20px #3498db, 0 0 30px #3498db, 0 0 40px #3498db;
+            text-shadow: 0 0 20px #4B0082, 0 0 30px #4B0082, 0 0 40px #8A2BE2;
           }
         }
 
@@ -184,7 +184,7 @@ const Banner: React.FC = () => {
             text-decoration-color: transparent;
           }
           50% {
-            text-decoration-color: #3498db;
+            text-decoration-color: #4B0082;
           }
           100% {
             text-decoration-color: transparent;
