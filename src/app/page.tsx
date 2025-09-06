@@ -18,7 +18,7 @@ const sampleData = [
 { week: 'W7', tokens: 4800000 },
 ];
 
-export default function OpenRouterClone(): JSX.Element {
+export default function OpenRouterClone() {
 return (
 <div className="min-h-screen bg-white text-slate-900 antialiased">
     {/* Header */}
