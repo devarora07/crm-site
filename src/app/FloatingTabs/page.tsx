@@ -13,7 +13,7 @@ interface Tab {
   delay: number;
 }
 
-export default function FloatingTabs() {
+export default function Page() {
   const [tabs, setTabs] = useState<Tab[]>([]);
 
   const tabData = [
