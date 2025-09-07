@@ -11,13 +11,14 @@ import StepsSection from '@/components/StepsSection'
 import Banner from '@/components/Banner'
 import PricingSection from '@/components/PricingSection'
 import ChatSection from '@/components/ChatSections'
+import MergeBanner from '@/components/MergeBanner'
 
 export default function Page() {
   return (
     <>
-    <Banner />
     <div className="min-h-screen bg-white text-slate-900 antialiased">
       {/* <Header /> */}
+      <MergeBanner />
       <main className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
         <HeroSection />
         <GraphSection />

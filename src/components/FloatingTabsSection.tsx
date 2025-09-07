@@ -13,7 +13,7 @@ interface Tab {
   delay: number;
 }
 
-export default function Page() {
+export default function FloatingTabsSection() {
   const [tabs, setTabs] = useState<Tab[]>([]);
 
   const tabData = [
@@ -108,19 +108,46 @@ export default function Page() {
   ];
 
   useEffect(() => {
+    // const generateRandomTabs = () => {
+    //   const newTabs = tabData.map((tab, index) => ({
+    //     id: index,
+    //     title: tab.title,
+    //     icon: tab.icon,
+    //     x: Math.random() * (window.innerWidth - 300),
+    //     y: Math.random() * (window.innerHeight - 200),
+    //     rotation: Math.random() * 20 - 10,
+    //     scale: 0.8 + Math.random() * 0.4,
+    //     delay: Math.random() * 2
+    //   }));
+    //   setTabs(newTabs);
+    // };
+
     const generateRandomTabs = () => {
-      const newTabs = tabData.map((tab, index) => ({
-        id: index,
-        title: tab.title,
-        icon: tab.icon,
-        x: Math.random() * (window.innerWidth - 300),
-        y: Math.random() * (window.innerHeight - 200),
-        rotation: Math.random() * 20 - 10,
-        scale: 0.8 + Math.random() * 0.4,
-        delay: Math.random() * 2
-      }));
-      setTabs(newTabs);
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  const radius = Math.min(centerX, centerY) * 0.7; // control how spread out tabs are
+  const angleStep = (2 * Math.PI) / tabData.length;
+
+  const newTabs = tabData.map((tab, index) => {
+    const angle = index * angleStep + Math.random() * angleStep * 0.5; // slight randomness
+    const x = centerX + radius * Math.cos(angle) - 125; // 125 = half tab width approx
+    const y = centerY + radius * Math.sin(angle) - 40;  // 40 = half tab height approx
+    return {
+      id: index,
+      title: tab.title,
+      icon: tab.icon,
+      x,
+      y,
+      rotation: Math.random() * 20 - 10,
+      scale: 0.9 + Math.random() * 0.3,
+      delay: Math.random() * 1.5,
     };
+  });
+
+  setTabs(newTabs);
+};
+
 
     generateRandomTabs();
     
@@ -148,9 +175,9 @@ export default function Page() {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200">
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[size:75px_75px]" />
+      <div className="absolute inset-0" />
       
       {/* Floating Tabs */}
       {tabs.map((tab, index) => (
@@ -242,7 +269,7 @@ export default function Page() {
         </motion.div>
       ))}
       
-      {/* Center Title */}
+      {/* Center Title
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -257,10 +284,10 @@ export default function Page() {
             Your complete ticket management system with floating navigation
           </p>
         </motion.div>
-      </div>
+      </div> */}
       
       {/* Refresh Button */}
-      <motion.button
+      {/* <motion.button
         onClick={() => window.location.reload()}
         className="fixed bottom-6 right-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
         whileHover={{ scale: 1.1 }}
@@ -272,7 +299,7 @@ export default function Page() {
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </svg>
-      </motion.button>
+      </motion.button> */}
     </div>
   );
 }

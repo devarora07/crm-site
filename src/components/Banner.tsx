@@ -38,7 +38,7 @@ const Banner: React.FC = () => {
 
 
   {showArrow && (
-        <div className="scroll-down-container">
+        <div className="scroll-down-container pointer-events-auto">
           <div className="scroll-arrow" onClick={scrollToNext}>
             <span>↓</span>
           </div>
@@ -57,7 +57,7 @@ const Banner: React.FC = () => {
 
         .tagline-body {
           font-family: 'Inter', sans-serif;
-          background: white;
+          // background: white;
           min-height: 100vh;
           display: flex;
           flex-direction: column;
@@ -122,7 +122,7 @@ const Banner: React.FC = () => {
         }
 
         .word-the {
-          color: #7f8c8d;
+          // color: #7f8c8d;
         }
 
         .word-s {
@@ -134,7 +134,7 @@ const Banner: React.FC = () => {
           text-decoration: line-through;
           text-decoration-color: #4B0082;
           text-decoration-thickness: 4px;
-          color: #95a5a6;
+          // color: #95a5a6;
           animation: strikethrough 3s ease-in-out infinite 0.5s;
         }
 
