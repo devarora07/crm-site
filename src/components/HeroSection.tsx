@@ -2,9 +2,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { toast, Toaster } from 'react-hot-toast';
+import { Router } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function HeroSection() {
-
+    const router = useRouter();
   const handleCopy = () => {
   navigator.clipboard.writeText('SLEDOPYT_API_KEY');
 
@@ -37,9 +39,12 @@ export default function HeroSection() {
           <button className="bg-slate-900 text-white px-5 py-3 rounded-lg shadow">
             Get started
           </button>
-          <button className="px-5 py-3 rounded-lg border border-slate-200">
-            Explore Tabs
-          </button>
+          <button 
+  onClick={() => router.push('/FloatingTabs')}
+  className="px-5 py-3 rounded-lg border border-slate-200"
+>
+  Explore Tabs
+</button>
         </div>
       </div>
 
