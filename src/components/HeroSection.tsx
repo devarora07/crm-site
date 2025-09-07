@@ -1,17 +1,24 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import ChatSection from './ChatSections'
-
-interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-}
+import { toast, Toaster } from 'react-hot-toast';
 
 export default function HeroSection() {
+
+  const handleCopy = () => {
+  navigator.clipboard.writeText('SLEDOPYT_API_KEY');
+
+  toast("We keep your API keys protected, so you don’t have to worry.", {
+    id: 'copy-toast',
+    position: 'top-right',
+    duration: 3000,
+  });
+};
+
+
   return (
     <section className="max-w-4xl mx-auto p-6 space-y-12">
-      {/* Hero Content Section */}
+      {/* Hero Content */}
       <div className="text-center">
         <motion.h1 
           initial={{ opacity: 0, y: 8 }} 
@@ -28,7 +35,7 @@ export default function HeroSection() {
 
         <div className="mt-8 flex gap-4 justify-center">
           <button className="bg-slate-900 text-white px-5 py-3 rounded-lg shadow">
-            Get started — Signup
+            Get started
           </button>
           <button className="px-5 py-3 rounded-lg border border-slate-200">
             Explore Tabs
@@ -51,20 +58,18 @@ export default function HeroSection() {
             <div className="font-mono text-sm bg-white px-3 py-2 rounded-md flex-1">
               SLEDOPYT_API_KEY ••••••••••
             </div>
-            <button className="ml-3 px-3 py-2 rounded-md border border-slate-200">Copy</button>
+            <button 
+              onClick={handleCopy}
+              className="ml-3 px-3 py-2 rounded-md border border-slate-200 hover:bg-slate-100 transition"
+            >
+              Copy
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Additional CTA Section */}
-      <div className="text-center py-8">
-        {/* <p className="text-slate-600 mb-4">
-          Ready to transform your customer relationships?
-        </p> */}
-        {/* <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200">
-          Start Your Free Trial
-        </button> */}
-      </div>
+      {/* React Hot Toast container */}
+      <Toaster />
     </section>
   );
 }
