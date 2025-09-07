@@ -35,7 +35,7 @@ return (
 export default function GraphSection() {
 return (
 <section>
-    <div className="bg-white border rounded-2xl p-6 shadow-sm">
+    <div className="mt-10 bg-white border border-gray-400 rounded-lg p-6 shadow-sm">
         <div className="flex items-start justify-between">
             <div>
                 <div className="text-sm text-slate-500">Routing Curves</div>
@@ -72,11 +72,11 @@ return (
     </div>
 
     <div className="mt-6 flex gap-4">
-        <div className="flex-1 bg-white border rounded-lg p-4 text-sm">
+        <div className="flex-1 bg-white border border-gray-400 rounded-lg p-4 text-sm">
             <div className="text-slate-500">Weekly Performance</div>
             <div className="mt-1 font-medium">100+ tickets/week closed</div>
         </div>
-        <div className="w-44 bg-white border rounded-lg p-4 text-sm">
+        <div className="w-44 bg-white border border-gray-400 rounded-lg p-4 text-sm">
             <div className="text-slate-500">On Site Users</div>
             <div className="mt-1 font-medium">60+</div>
         </div>

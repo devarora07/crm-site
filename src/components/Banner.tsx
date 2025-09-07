@@ -26,12 +26,12 @@ const Banner: React.FC = () => {
             <span className="word-the">The</span>
             
             <span className="t-wrapper">
-              <span className="word-not">not so</span>
-              <span className="caret">^</span>
+              <span className="word-not text-purple-700">not so</span>
+              <span className="caret text-purple-700">^</span>
               <span className="word-s">-</span>
             </span>
             <span className="word-boring"> boring</span>
-            <span className="word-crm"> CRM</span>
+            <span className="word-crm bg-gradient-to-br from-purple-700 via-purple-600 to-purple-800 text-white rounded-xl"> CRM</span>
           </div>
         </h1>
       </div>
@@ -101,11 +101,12 @@ const Banner: React.FC = () => {
           top: -1.2em;
           left: 0;
           transform: translateX(-25%);
-          color:rgb(0, 0, 0);
+          // color:rgb(0, 0, 0);
           font-size: 0.6em;
           animation: glow 2s ease-in-out infinite alternate;
           z-index: 10;
           white-space: nowrap;
+          font-weight: 400;  
         }
 
         .caret {
@@ -113,10 +114,11 @@ const Banner: React.FC = () => {
           bottom: -0.65em;
           left: 0.1em;
           transform: translateX(-50%);
-          color: #4B0082;
+          // color: #4B0082;
           font-size: 0.8em;
           font-weight: 900;
           animation: bounce 1.5s ease-in-out infinite;
+          font-weight: 400;  
         }
 
         .word-the {
@@ -137,7 +139,7 @@ const Banner: React.FC = () => {
         }
 
         .word-crm {
-          background: linear-gradient(45deg, #4B0082 0%, #6f00ff 50%, #8A2BE2 100%);
+          // background: linear-gradient(45deg, #4B0082 0%, #6f00ff 50%, #8A2BE2 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -169,7 +171,8 @@ const Banner: React.FC = () => {
 
         .scroll-arrow span {
           font-size: 3rem;
-          color: #4B0082;
+          // color: #4B0082;
+          color: #8A2BE2;
           font-weight: bold;
           animation: bounce-arrow 1.5s ease-in-out infinite;
           transition: all 0.3s ease;
@@ -177,18 +180,45 @@ const Banner: React.FC = () => {
         }
 
         .scroll-arrow:hover span {
-          color: #8A2BE2;
+          // color: #8A2BE2;
+          color: #6A1FBF;
           transform: scale(1.2);
         }
 
-        @keyframes glow {
-          0% {
-            text-shadow: 0 0 10px #4B0082, 0 0 20px #4B0082;
-          }
-          100% {
-            text-shadow: 0 0 20px #4B0082, 0 0 30px #4B0082, 0 0 40px #8A2BE2;
-          }
+        // @keyframes glow {
+        //   0% {
+        //     text-shadow: 0 0 10px #4B0082, 0 0 20px #4B0082;
+        //   }
+        //   100% {
+        //     text-shadow: 0 0 20px #4B0082, 0 0 30px #4B0082, 0 0 40px #8A2BE2;
+        //   }
+        // }
+
+      // @keyframes glow {
+      //   0% {
+      //     text-shadow: 0 0 10px rgb(126 34 206), 0 0 20px rgb(126 34 206); /* purple-700 */
+      //   }
+      //   100% {
+      //     text-shadow: 
+      //       0 0 10px rgb(126 34 206), 
+      //       0 0 20px rgb(147 51 234),  /* purple-600 */
+      //       0 0 30px rgb(109 40 217);  /* purple-800 */
+      //   }
+      // }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 4px rgba(31, 31, 31, 0.25), 0 0 6px rgba(31, 31, 31, 0.2);
         }
+        100% {
+          text-shadow: 
+            0 0 6px rgba(31, 31, 31, 0.3), 
+            0 0 10px rgba(55, 65, 81, 0.25),  /* gray-700 */
+            0 0 12px rgba(17, 24, 39, 0.35);  /* gray-900 */
+        }
+      }
+
+
 
         @keyframes bounce {
           0%, 100% {
@@ -199,17 +229,17 @@ const Banner: React.FC = () => {
           }
         }
 
-        @keyframes strikethrough {
-          0% {
-            text-decoration-color: transparent;
-          }
-          50% {
-            text-decoration-color: #4B0082;
-          }
-          100% {
-            text-decoration-color: transparent;
-          }
+      @keyframes strikethrough {
+        0% {
+          text-decoration-color: transparent;
         }
+        50% {
+          text-decoration-color: rgb(126 34 206); /* Tailwind purple-700 */
+        }
+        100% {
+          text-decoration-color: transparent;
+        }
+      }
 
         @keyframes shine {
           0% {

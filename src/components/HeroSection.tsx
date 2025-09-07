@@ -71,7 +71,7 @@ export default function HeroSection() {
 
 function StatCard({ title, value }: { title: string; value: string }) {
   return (
-    <div className="bg-white border rounded-lg p-6 shadow-sm text-center">
+    <div className="bg-white border border-gray-400 rounded-lg p-6 shadow-sm text-center">
       <div className="text-sm text-slate-500">{title}</div>
       <div className="mt-2 font-semibold text-2xl">{value}</div>
     </div>

@@ -39,7 +39,7 @@ export default function PricingSection() {
         Compare Pricing & Features
       </h2>
 
-      <div className="overflow-x-auto border border-gray-300 rounded-2xl">
+      <div className="overflow-x-auto border border-gray-400 rounded-lg">
         <table className="w-full border border-gray-300 rounded-2xl overflow-hidden shadow-md border-collapse">
           <thead>
             <tr className="bg-gray-50 text-left">

@@ -18,7 +18,7 @@ export default function Page() {
     <Banner />
     <div className="min-h-screen bg-white text-slate-900 antialiased">
       {/* <Header /> */}
-      <main className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <main className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
         <HeroSection />
         <GraphSection />
       </main>
