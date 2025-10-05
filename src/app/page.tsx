@@ -24,7 +24,7 @@ export default function Page() {
         <GraphSection />
       </main>
       <FeaturesSection />
-      <ChatSection />
+      {/* <ChatSection /> */}
       <PricingSection />
       <IntegrationsSection />
       <CTASection />

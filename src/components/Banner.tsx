@@ -31,7 +31,7 @@ const Banner: React.FC = () => {
               <span className="word-s">-</span>
             </span>
             <span className="word-boring"> boring</span>
-            <span className="word-crm bg-gradient-to-br from-purple-700 via-purple-600 to-purple-800 text-white rounded-xl"> CRM</span>
+            <span className="word-crm bg-gradient-to-br from-purple-700 via-purple-600 to-purple-800 text-white rounded-xl"> RMS</span>
           </div>
         </h1>
       </div>

@@ -6,7 +6,7 @@ export default function FeaturesSection() {
   return (
     <section className="bg-slate-50 py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold">Why Choose CRM Central?</h2>
+        <h2 className="text-3xl font-bold">Why Choose RMS Central?</h2>
         <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
           Streamline your sales, manage leads, and grow customer relationships with ease.
         </p>

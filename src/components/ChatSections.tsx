@@ -27,14 +27,14 @@ export default function ChatSection() {
         headers: {
           'Authorization': `Bearer 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`,
           'Content-Type': 'application/json',
-          'X-Title': 'CRM Chatbot',
+          'X-Title': 'RMS Chatbot',
         },
         body: JSON.stringify({
           model: 'meta-llama/llama-3.1-8b-instruct:free',
           messages: [
             {
               role: 'system',
-              content: 'You are a helpful assistant for a CRM dashboard. Keep responses concise and helpful.'
+              content: 'You are a helpful assistant for a RMS dashboard. Keep responses concise and helpful.'
             },
             ...messages,
             userMessage
@@ -96,7 +96,7 @@ export default function ChatSection() {
               </div>
               <h4 className="font-semibold text-slate-900 mb-3 text-lg">Welcome to Your AI Assistant</h4>
               <p className="text-slate-500 text-base max-w-sm mx-auto">
-                {`Hi! I'm here to help with your CRM questions and guide you through the dashboard features. Ask me anything!`}
+                {`Hi! I'm here to help with your RMS questions and guide you through the dashboard features. Ask me anything!`}
               </p>
             </div>
           )}

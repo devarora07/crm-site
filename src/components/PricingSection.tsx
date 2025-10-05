@@ -15,18 +15,18 @@ const features = [
 
 const plans = [
   {
-    name: "Our CRM",
+    name: "Our RMS",
     price: "1/3rd Price",
     highlight: true,
     features: [true, true, true, true, true, true, true],
   },
   {
-    name: "Zoho CRM",
+    name: "Zoho RMS",
     price: "$30+ / user",
     features: [true, true, true, true, true, false, true],
   },
   {
-    name: "Odoo CRM",
+    name: "Odoo RMS",
     price: "$25+ / user",
     features: [true, true, false, true, true, false, false],
   },
@@ -100,7 +100,7 @@ export default function PricingSection() {
       </div>
 
       <p className="text-center text-lg mt-8 font-semibold">
-        Everything you need in a CRM — for just{" "}
+        Everything you need in a RMS — for just{" "}
         <span className="text-purple-600">1/3rd the price</span>.
       </p>
     </section>

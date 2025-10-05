@@ -9,7 +9,7 @@ import { User, CreditCard, Key, Github, Mail, Globe } from 'lucide-react';
 //       <div className="max-w-6xl mx-auto px-6">
 //         <h2 className="text-3xl font-bold text-center">Get Started in 3 Simple Steps</h2>
 //         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-//           <StepCard number={1} title="Sign Up" desc="Create your CRM account and invite your team." icon={<User />} />
+//           <StepCard number={1} title="Sign Up" desc="Create your RMS account and invite your team." icon={<User />} />
 //           <StepCard number={2} title="Add Your Customers" desc="Import or add leads and contacts easily." icon={<CreditCard />} />
 //           <StepCard number={3} title="Start Managing Deals" desc="Track opportunities, pipelines, and team performance." icon={<Key />} />
 //         </div>
