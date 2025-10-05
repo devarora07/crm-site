@@ -12,6 +12,8 @@ import Banner from '@/components/Banner'
 import PricingSection from '@/components/PricingSection'
 import ChatSection from '@/components/ChatSections'
 import MergeBanner from '@/components/MergeBanner'
+import EnergyAssetsSection from '@/components/EnergyAssetsSection'
+import TracksoLikeSection from '@/components/Trackso'
 
 export default function Page() {
   return (
@@ -25,6 +27,8 @@ export default function Page() {
       </main>
       <FeaturesSection />
       {/* <ChatSection /> */}
+      {/* <EnergyAssetsSection /> */}
+      <TracksoLikeSection />
       <PricingSection />
       <IntegrationsSection />
       <CTASection />
