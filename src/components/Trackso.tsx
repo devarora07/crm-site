@@ -27,6 +27,31 @@ export default function TracksoLikeSection() {
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
           Track &amp; optimize your assets
         </h2>
+
+      {/* FULL WIDTH IMAGES */}
+      <div className="w-full">
+        {/* First full-width image */}
+        <div className="relative w-full min-h-[200px] sm:min-h-[360px] md:min-h-[480px] lg:min-h-[550px]">
+          <Image
+            src="/images/k.png"
+            alt="Full screen illustration 1"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+        </div>
+        {/* Second full-width image */}
+        <div className="relative w-full min-h-[200px] sm:min-h-[360px] md:min-h-[480px] lg:min-h-[550px] mt-8">
+          <Image
+            src="/images/j.png"
+            alt="Full screen illustration 2"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      </div>
+
+        
         <p className="pt-3 text-slate-600 max-w-3xl mx-auto">
           Cloud-based monitoring and analytics to keep every site healthy—spot issues sooner, reduce
           downtime, and stay on top of performance without being on-site.
@@ -37,7 +62,7 @@ export default function TracksoLikeSection() {
       <div className="mb-14">
         <div className="relative w-full rounded-2xl overflow-hidden ring-1 ring-black/5 dark:ring-white/10">
           <Image
-            src="/images/solution-overview.jpg"
+            src="/images/solution-overview.png"
             alt="Solution overview diagram"
             width={1500}
             height={900}

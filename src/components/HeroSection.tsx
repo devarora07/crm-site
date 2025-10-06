@@ -37,13 +37,13 @@ export default function HeroSection() {
 
         <div className="mt-8 flex gap-4 justify-center">
           <button className="bg-slate-900 text-white px-5 py-3 rounded-lg shadow">
-            Get started
+            View Solution
           </button>
           <button 
-  onClick={() => router.push('/FloatingTabs')}
+  onClick={() => router.push('https://admin-dashboard-1-swart.vercel.app/auth/login')}
   className="px-5 py-3 rounded-lg border border-slate-200"
 >
-  Explore Tabs
+  View Dashboard
 </button>
         </div>
       </div>

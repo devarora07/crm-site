@@ -12,8 +12,8 @@ export default function FeaturesSection() {
         </p>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           <FeatureCard title="All-in-One Dashboard" desc="Track leads, deals, and customer interactions in a single platform." />
-          <FeatureCard title="Automated Workflows" desc="Automate repetitive tasks so your team focuses on closing deals." />
-          <FeatureCard title="Transparent Pricing" desc="Simple plans with no hidden fees, scale as your team grows." />
+          <FeatureCard title="Your Ticketing Platform" desc="Manage all your faulty tickets." />
+          <FeatureCard title="Attendance Module" desc="Your login/logoff centre manager." />
         </div>
       </div>
     </section>

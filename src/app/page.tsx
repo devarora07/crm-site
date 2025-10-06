@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import GraphSection from '@/components/GraphSection';
 import FeaturesSection from '@/components/FeaturesSection';
-import IntegrationsSection from '@/components/IntegrationsSection';
+// import IntegrationsSection from '@/components/IntegrationsSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 import StepsSection from '@/components/StepsSection'
@@ -30,7 +30,7 @@ export default function Page() {
       {/* <EnergyAssetsSection /> */}
       <TracksoLikeSection />
       <PricingSection />
-      <IntegrationsSection />
+      {/* <IntegrationsSection /> */}
       <CTASection />
       <Footer />
     </div>
